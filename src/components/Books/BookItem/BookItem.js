@@ -20,13 +20,13 @@ const BookItem = (props) => {
 
 
   return (
-    <li className={classes.Book}>
-      <div>
+    <li Style="border-bottom: 1px solid gray; padding-bottom: 10px" className={classes.Book}>
+      <div Style="display:inline-block; width:50%">
         <h3>{props.name}</h3>
         <div className={classes.author}>{props.author}</div>
         <div className={classes.price}>{price}</div>
       </div>
-      <div>
+      <div Style="display:inline-block; width:50%">
         <BookItemForm id={props.id} onAddToCart={addToCartHandler}/>
       </div>
     </li>
