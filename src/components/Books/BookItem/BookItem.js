@@ -1,12 +1,22 @@
 import { useContext } from 'react';
 import BookItemForm from './BookItemForm';
 import classes from './BookItem.module.css';
+import CartContext from '../../../store/cart-context';
+
 
 const BookItem = (props) => {
-  
+  const cartCtx = useContext(CartContext);
 
   const price = `$${props.price.toFixed(2)}`;
-
+ 
+  const addToCartHandler = amount => {
+    cartCtx.addItem({
+      id: props.id,
+      name: props.name,
+      amount: amount,
+      price: props.price
+    });
+  };
 
 
   return (
@@ -17,7 +27,7 @@ const BookItem = (props) => {
         <div className={classes.price}>{price}</div>
       </div>
       <div>
-        <BookItemForm />
+        <BookItemForm id={props.id} onAddToCart={addToCartHandler}/>
       </div>
     </li>
   );
