@@ -6,7 +6,7 @@ const BooksSummary = () => {
       <h2>Your favorite books are now being delievered to your home!</h2>
       <p>
         Choose your favorite book from our broad selection of available books
-        and all that from the comfort of your home home.
+        and all that from the comfort of your own home.
       </p>
       <p>
         We have wide variety of books of every genre! 

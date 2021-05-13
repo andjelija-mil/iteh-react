@@ -5,6 +5,8 @@ import Header from './components/Layout/Header';
 import Books from './components/Books/Books';
 import Cart from './components/Cart/Cart';
 import CartProvider from './store/CartProvider';
+import { Route } from 'react-router-dom'
+import About from './components/About';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -21,7 +23,12 @@ function App() {
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <main>
-        <Books />
+        <Route path="/home">
+         <Books />
+        </Route>
+        <Route path = "/about">
+         <About />
+        </Route>
       </main>
     </CartProvider>
 
